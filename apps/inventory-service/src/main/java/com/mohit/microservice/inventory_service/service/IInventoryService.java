@@ -15,4 +15,6 @@ public interface IInventoryService {
 
     void deductInventory(String productId, InventoryUpdateRequest request);
 
+    List<Inventory> getBatchInventory(List<String> productIds);
+
 }

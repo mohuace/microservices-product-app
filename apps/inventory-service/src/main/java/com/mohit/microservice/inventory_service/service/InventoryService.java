@@ -55,4 +55,12 @@ public class InventoryService implements IInventoryService {
         }
     }
 
+    @Override
+    public List<Inventory> getBatchInventory(List<String> productIds) {
+        List<Long> longProductIds = productIds.stream()
+            .map(Long::parseLong)
+            .toList();
+        return inventoryRepository.findAllById(longProductIds);
+    }
+
 }

@@ -23,8 +23,8 @@ public class ProductController {
         return productService.getProductById(productId);
     }
 
-    @PostMapping("/batch")
-    public List<Product> getProductsByIds(@RequestBody List<String> productIds) {
-        return productService.getProductsByIds(productIds);
+    @GetMapping("/batch")
+    public List<Product> getProductsByIds(@RequestParam List<String> ids) {
+        return productService.getProductsByIds(ids);
     }
 }
